@@ -15,13 +15,27 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
 
+    @IBSegueAction func showHostingView(_ coder: NSCoder) -> UIViewController? {
+        return HostingViewController(coder: coder, color: .green)
+    }
+
+    @IBAction func showSwiftUIViewWithCode(_ sender: Any) {
+//        present(UIHostingController(rootView: SwiftUIView(color: .yellow)), animated: true)
+        navigationController?.pushViewController(UIHostingController(rootView: SwiftUIView(color: .red)), animated: true)
+    }
+
 }
 
 
 class HostingViewController: UIHostingController<SwiftUIView>{
     required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder, rootView: SwiftUIView())
+        // fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder, rootView: SwiftUIView(color: .blue))
 
+    }
+
+    init?(coder: NSCoder, color: Color) {
+        super.init(coder: coder, rootView: SwiftUIView(color: color))
     }
 }
 

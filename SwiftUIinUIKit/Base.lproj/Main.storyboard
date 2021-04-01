@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KjN-gN-hDe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VFB-ct-Im2">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -17,33 +17,78 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j24-qv-rB0">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                            </containerView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="78" translatesAutoresizingMaskIntoConstraints="NO" id="vYV-Gn-eYc">
+                                <rect key="frame" x="81.5" y="325" width="251" height="246"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jRY-or-yKA">
+                                        <rect key="frame" x="0.0" y="0.0" width="251" height="30"/>
+                                        <state key="normal" title="show SwiftUI View simple segue"/>
+                                        <connections>
+                                            <segue destination="KjN-gN-hDe" kind="show" id="3Ds-5M-yCM"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yqZ-Kg-kZC">
+                                        <rect key="frame" x="0.0" y="108" width="251" height="30"/>
+                                        <state key="normal" title="show SwiftUI VIew with segue action"/>
+                                        <connections>
+                                            <segue destination="KjN-gN-hDe" kind="show" destinationCreationSelector="showHostingView:" id="vng-Lk-GrI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qn0-FI-KZb">
+                                        <rect key="frame" x="0.0" y="216" width="251" height="30"/>
+                                        <state key="normal" title="show SwiftUI View with code"/>
+                                        <connections>
+                                            <action selector="showSwiftUIViewWithCode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G7e-ih-MJh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="j24-qv-rB0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="0ht-pv-PVZ"/>
-                            <constraint firstItem="j24-qv-rB0" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="dwJ-e9-KJD"/>
-                            <constraint firstItem="j24-qv-rB0" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="eRi-Px-dkT"/>
-                            <constraint firstItem="j24-qv-rB0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="qpR-Kc-xCG"/>
+                            <constraint firstItem="vYV-Gn-eYc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AXN-uO-4SR"/>
+                            <constraint firstItem="vYV-Gn-eYc" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="UNk-Ya-bcG"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="xTf-7U-SAi"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="51.5625"/>
+            <point key="canvasLocation" x="626.08695652173913" y="51.5625"/>
         </scene>
         <!--Hosting View Controller-->
         <scene sceneID="7lo-ew-i7c">
             <objects>
-                <hostingController id="KjN-gN-hDe" customClass="HostingViewController" customModule="SwiftUIinUIKit" customModuleProvider="target" sceneMemberID="viewController"/>
+                <hostingController id="KjN-gN-hDe" customClass="HostingViewController" customModule="SwiftUIinUIKit" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="GKq-db-wA0"/>
+                </hostingController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QRg-Pr-Yva" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1003" y="52"/>
+            <point key="canvasLocation" x="1470" y="52"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0YM-Gh-xGm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VFB-ct-Im2" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7Yl-HG-sI3">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="qme-A1-Uij"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GA0-rs-ob8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-284.05797101449275" y="51.5625"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="vng-Lk-GrI"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
