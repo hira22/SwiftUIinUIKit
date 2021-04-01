@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B659B2F326162B0500C90C64 /* UILibrary in Frameworks */ = {isa = PBXBuildFile; productRef = B659B2F226162B0500C90C64 /* UILibrary */; };
+		B659B2F426162B0500C90C64 /* UILibrary in Embed Frameworks */ = {isa = PBXBuildFile; productRef = B659B2F226162B0500C90C64 /* UILibrary */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		B6F30A02260B898800A794E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F30A01260B898800A794E1 /* AppDelegate.swift */; };
 		B6F30A04260B898800A794E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F30A03260B898800A794E1 /* SceneDelegate.swift */; };
 		B6F30A06260B898800A794E1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F30A05260B898800A794E1 /* ViewController.swift */; };
@@ -15,7 +17,6 @@
 		B6F30A0E260B898A00A794E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6F30A0C260B898A00A794E1 /* LaunchScreen.storyboard */; };
 		B6F30A19260B898A00A794E1 /* SwiftUIinUIKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F30A18260B898A00A794E1 /* SwiftUIinUIKitTests.swift */; };
 		B6F30A24260B898A00A794E1 /* SwiftUIinUIKitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F30A23260B898A00A794E1 /* SwiftUIinUIKitUITests.swift */; };
-		B6F30A3F260C274D00A794E1 /* UILibrary in Frameworks */ = {isa = PBXBuildFile; productRef = B6F30A3E260C274D00A794E1 /* UILibrary */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		B659B2E0261628E700C90C64 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B659B2F426162B0500C90C64 /* UILibrary in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		B6F309FE260B898800A794E1 /* SwiftUIinUIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIinUIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6F30A01260B898800A794E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -50,7 +65,6 @@
 		B6F30A1F260B898A00A794E1 /* SwiftUIinUIKitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftUIinUIKitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6F30A23260B898A00A794E1 /* SwiftUIinUIKitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIinUIKitUITests.swift; sourceTree = "<group>"; };
 		B6F30A25260B898A00A794E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B6F30A39260C211F00A794E1 /* UILibrary */ = {isa = PBXFileReference; lastKnownFileType = folder; name = UILibrary; path = ../UILibrary; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6F30A3F260C274D00A794E1 /* UILibrary in Frameworks */,
+				B659B2F326162B0500C90C64 /* UILibrary in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,7 +96,6 @@
 		B6F309F5260B898800A794E1 = {
 			isa = PBXGroup;
 			children = (
-				B6F30A39260C211F00A794E1 /* UILibrary */,
 				B6F30A00260B898800A794E1 /* SwiftUIinUIKit */,
 				B6F30A17260B898A00A794E1 /* SwiftUIinUIKitTests */,
 				B6F30A22260B898A00A794E1 /* SwiftUIinUIKitUITests */,
@@ -150,6 +163,7 @@
 				B6F309FA260B898800A794E1 /* Sources */,
 				B6F309FB260B898800A794E1 /* Frameworks */,
 				B6F309FC260B898800A794E1 /* Resources */,
+				B659B2E0261628E700C90C64 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -157,7 +171,7 @@
 			);
 			name = SwiftUIinUIKit;
 			packageProductDependencies = (
-				B6F30A3E260C274D00A794E1 /* UILibrary */,
+				B659B2F226162B0500C90C64 /* UILibrary */,
 			);
 			productName = SwiftUIinUIKit;
 			productReference = B6F309FE260B898800A794E1 /* SwiftUIinUIKit.app */;
@@ -230,6 +244,9 @@
 				Base,
 			);
 			mainGroup = B6F309F5260B898800A794E1;
+			packageReferences = (
+				B659B2F126162B0500C90C64 /* XCRemoteSwiftPackageReference "UILibrary" */,
+			);
 			productRefGroup = B6F309FF260B898800A794E1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -609,9 +626,21 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		B659B2F126162B0500C90C64 /* XCRemoteSwiftPackageReference "UILibrary" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hira22/UILibrary.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
-		B6F30A3E260C274D00A794E1 /* UILibrary */ = {
+		B659B2F226162B0500C90C64 /* UILibrary */ = {
 			isa = XCSwiftPackageProductDependency;
+			package = B659B2F126162B0500C90C64 /* XCRemoteSwiftPackageReference "UILibrary" */;
 			productName = UILibrary;
 		};
 /* End XCSwiftPackageProductDependency section */
