@@ -8,6 +8,7 @@
 import UIKit
 import SwiftUI
 import UILibrary
+import IettyUI
 
 class ViewController: UIViewController {
 
@@ -20,10 +21,43 @@ class ViewController: UIViewController {
     }
 
     @IBAction func showSwiftUIViewWithCode(_ sender: Any) {
-//        present(UIHostingController(rootView: SwiftUIView(color: .yellow)), animated: true)
-        navigationController?.pushViewController(UIHostingController(rootView: SwiftUIView(color: .red)), animated: true)
+        Rooter(self).showWalkThroughView()
+//        let view = WalkThroughView(rooter: Rooter(self))
+//            .environmentObject(WalkThroughInteractor(repository: Repository()))
+//        present(UIHostingController(rootView: view), animated: true)
+//        navigationController?.pushViewController(UIHostingController(rootView: view), animated: true)
     }
 
+
+    class Rooter: WalkThroughRooterProtocol {
+        unowned let viewController: UIViewController
+
+        init(_ viewController: UIViewController) {
+            self.viewController = viewController
+        }
+
+        func showWalkThroughView() {
+            let view = WalkThroughView(rooter: self)
+                .environmentObject(WalkThroughInteractor(repository: Repository()))
+
+            viewController.present(UIHostingController(rootView: view), animated: true)
+        }
+
+        func showAuthenticationView() {
+            viewController.dismiss(animated: true)
+
+        }
+    }
+}
+
+class Repository: WalkThroughRepositoryProtocol {
+    var contents: [WalkThrough.Content] = [
+        .init(title: "タイトル1", imageName: "", body: "なんとかかんとか説明が入る1"),
+        .init(title: "タイトル2", imageName: "", body: "なんとかかんとか説明が入る2"),
+        .init(title: "タイトル3", imageName: "", body: "なんとかかんとか説明が入る3"),
+        .init(title: "タイトル4", imageName: "", body: "なんとかかんとか説明が入る4"),
+        .init(title: "タイトル5", imageName: "", body: "なんとかかんとか説明が入る5"),
+    ]
 }
 
 

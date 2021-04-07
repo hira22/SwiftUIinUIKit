@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B62BF368261D7BE400530F39 /* IettyUI in Frameworks */ = {isa = PBXBuildFile; productRef = B62BF367261D7BE400530F39 /* IettyUI */; };
 		B659B2F326162B0500C90C64 /* UILibrary in Frameworks */ = {isa = PBXBuildFile; productRef = B659B2F226162B0500C90C64 /* UILibrary */; };
 		B659B2F426162B0500C90C64 /* UILibrary in Embed Frameworks */ = {isa = PBXBuildFile; productRef = B659B2F226162B0500C90C64 /* UILibrary */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		B6F30A02260B898800A794E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F30A01260B898800A794E1 /* AppDelegate.swift */; };
@@ -72,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B62BF368261D7BE400530F39 /* IettyUI in Frameworks */,
 				B659B2F326162B0500C90C64 /* UILibrary in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -172,6 +174,7 @@
 			name = SwiftUIinUIKit;
 			packageProductDependencies = (
 				B659B2F226162B0500C90C64 /* UILibrary */,
+				B62BF367261D7BE400530F39 /* IettyUI */,
 			);
 			productName = SwiftUIinUIKit;
 			productReference = B6F309FE260B898800A794E1 /* SwiftUIinUIKit.app */;
@@ -246,6 +249,7 @@
 			mainGroup = B6F309F5260B898800A794E1;
 			packageReferences = (
 				B659B2F126162B0500C90C64 /* XCRemoteSwiftPackageReference "UILibrary" */,
+				B62BF366261D7BE400530F39 /* XCRemoteSwiftPackageReference "ietty_ios_ui" */,
 			);
 			productRefGroup = B6F309FF260B898800A794E1 /* Products */;
 			projectDirPath = "";
@@ -627,6 +631,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		B62BF366261D7BE400530F39 /* XCRemoteSwiftPackageReference "ietty_ios_ui" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ietty/ietty_ios_ui.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		B659B2F126162B0500C90C64 /* XCRemoteSwiftPackageReference "UILibrary" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hira22/UILibrary.git";
@@ -638,6 +650,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B62BF367261D7BE400530F39 /* IettyUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B62BF366261D7BE400530F39 /* XCRemoteSwiftPackageReference "ietty_ios_ui" */;
+			productName = IettyUI;
+		};
 		B659B2F226162B0500C90C64 /* UILibrary */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B659B2F126162B0500C90C64 /* XCRemoteSwiftPackageReference "UILibrary" */;
