@@ -7,10 +7,13 @@
 
 import UIKit
 import SwiftUI
+import Combine
 import UILibrary
 import IettyUI
 
 class ViewController: UIViewController {
+
+    private var subscriptions: Set<AnyCancellable> = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,32 +24,30 @@ class ViewController: UIViewController {
     }
 
     @IBAction func showSwiftUIViewWithCode(_ sender: Any) {
-        Rooter(self).showWalkThroughView()
-//        let view = WalkThroughView(rooter: Rooter(self))
-//            .environmentObject(WalkThroughInteractor(repository: Repository()))
-//        present(UIHostingController(rootView: view), animated: true)
-//        navigationController?.pushViewController(UIHostingController(rootView: view), animated: true)
-    }
 
 
-    class Rooter: WalkThroughRooterProtocol {
-        unowned let viewController: UIViewController
+        let interactor = WalkThroughInteractor(repository: Repository())
+        let presentation = WalkThroughPresentation()
+        let view = WalkThroughView()
+            .environmentObject(interactor)
+            .environmentObject(presentation)
 
-        init(_ viewController: UIViewController) {
-            self.viewController = viewController
-        }
+        let viewController = UIHostingController(rootView: view)
+        viewController.modalPresentationStyle = .fullScreen
+        viewController.modalTransitionStyle = .flipHorizontal
 
-        func showWalkThroughView() {
-            let view = WalkThroughView(rooter: self)
-                .environmentObject(WalkThroughInteractor(repository: Repository()))
+        presentation.$isPresented
+            .compactMap { $0 }
+            .sink { [weak self] isPresent in
+                if !isPresent {
+//                    viewController.dismiss(animated: true)
+                    self?.navigationController?.popViewController(animated: true)
+                }
+            }
+            .store(in: &subscriptions)
 
-            viewController.present(UIHostingController(rootView: view), animated: true)
-        }
-
-        func showAuthenticationView() {
-            viewController.dismiss(animated: true)
-
-        }
+//        present(viewController, animated: true)
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }
 
